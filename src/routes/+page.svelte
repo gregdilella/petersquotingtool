@@ -862,55 +862,71 @@
   </header>
 
   <!-- Main content -->
-  <div class="max-w-4xl mx-auto px-4 py-8">
+  <div class="max-w-4xl mx-auto px-4 py-4">
     <!-- Hero Section -->
-    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 mb-6">
-      <div class="text-center">
-        <!-- Big Blue Header -->
-        <h1 class="text-3xl font-bold text-gray-900 mb-1">
-          Welcome to
-        </h1>
-        
-        <!-- Curved Text Around Image -->
-        <div class="relative mb-8">
-          <!-- SVG for curved text -->
-          <svg viewBox="0 0 500 250" class="w-[450px] h-[225px] mx-auto">
-            <defs>
-              <!-- Define the path for the text to follow (more curved semi-circle) -->
-              <path id="curve" d="M 60 200 Q 250 30 440 200" fill="none" />
-            </defs>
-            
-            <!-- The curved text -->
-            <text class="fill-blue-500 text-3xl font-semibold tracking-wide">
-              <textPath href="#curve" startOffset="50%" text-anchor="middle">
-                Peter's Quoting Tool
-              </textPath>
-            </text>
-          </svg>
+    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden mb-6">
+      <!-- Rainbow Header at Top -->
+      <div class="relative bg-gradient-to-r from-purple-50 via-blue-50 to-indigo-50 px-6 py-4 border-b border-gray-100">
+        <!-- Main Rainbow Title -->
+        <div class="text-center relative blue-header">
+          <h1 class="text-5xl font-bold mb-2 blue-gradient-text">
+            Peter's Quoting Tool
+          </h1>
           
-          <!-- Larger Circular Image with more space -->
-          <div class="absolute -bottom-20 left-1/2 transform -translate-x-1/2">
-            <div class="w-48 h-48 rounded-full overflow-hidden ring-4 ring-white shadow-xl bg-gray-100 flex items-center justify-center hover-image-container">
-              <!-- Peter's image -->
-              <img 
-                src={peterImage} 
-                alt="Peter" 
-                class="w-full h-full object-cover hover-image"
-                on:error={handleImageError}
-              />
-              <!-- Fallback placeholder -->
-              <div class="w-full h-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-4xl hidden">
-                P
-              </div>
+          <!-- Decorative underline with blue gradient -->
+          <div class="mx-auto w-64 h-1 bg-gradient-to-r from-blue-900 via-blue-600 via-blue-400 via-sky-400 via-cyan-400 to-blue-500 rounded-full"></div>
+          
+          <!-- 3 airplanes on the left -->
+          <div class="absolute top-1/2 left-0 transform -translate-y-1/2">
+            <div class="flex flex-row space-x-3">
+              <span class="text-blue-500 text-3xl animate-dance-left-timed">✈️</span>
+              <span class="text-sky-600 text-2xl animate-dance-left-timed" style="animation-delay: 0.5s;">🛩️</span>
+              <span class="text-cyan-600 text-3xl animate-dance-left-timed" style="animation-delay: 1s;">✈️</span>
+            </div>
+          </div>
+          
+          <!-- 3 airplanes on the right -->
+          <div class="absolute top-1/2 right-0 transform -translate-y-1/2">
+            <div class="flex flex-row space-x-3">
+              <span class="text-blue-600 text-2xl animate-dance-right-timed" style="animation-delay: 0.3s;">🛩️</span>
+              <span class="text-sky-500 text-3xl animate-dance-right-timed" style="animation-delay: 0.8s;">✈️</span>
+              <span class="text-blue-700 text-2xl animate-dance-right-timed" style="animation-delay: 1.3s;">🛩️</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Content Area -->
+      <div class="p-6 text-center">
+        <!-- Peter's Image - Now Centered in Content Area -->
+        <div class="relative mb-6 peter-image">
+          <div class="w-48 h-48 mx-auto rounded-full overflow-hidden ring-4 ring-white shadow-2xl bg-gray-100 flex items-center justify-center hover-image-container">
+            <!-- Peter's image -->
+            <img 
+              src={peterImage} 
+              alt="Peter" 
+              class="w-full h-full object-cover hover-image"
+              on:error={handleImageError}
+            />
+            <!-- Fallback placeholder -->
+            <div class="w-full h-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-5xl hidden">
+              P
             </div>
           </div>
         </div>
         
         <!-- Subheader -->
-        <div class="mt-24 pt-4">
-          <h2 class="text-xl font-medium text-gray-600 mb-8">
+        <div class="subheader">
+          <h2 class="text-lg font-medium text-gray-600 mb-4">
             As if the man himself provided you a quote.
           </h2>
+          
+          <!-- Decorative divider -->
+          <div class="flex items-center justify-center space-x-4 mb-4">
+            <div class="w-12 h-px bg-gradient-to-r from-transparent to-gray-300"></div>
+            <span class="text-gray-400 text-sm">✦</span>
+            <div class="w-12 h-px bg-gradient-to-l from-transparent to-gray-300"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1563,22 +1579,150 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   }
   
-  /* Peter's image hover effect */
+  /* Blue gradient text effect for header */
+  .blue-gradient-text {
+    background: linear-gradient(45deg, #1e3a8a, #3b82f6, #60a5fa, #93c5fd, #0ea5e9, #0284c7, #0369a1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: blueShimmer 4s ease-in-out infinite;
+  }
+  
+  /* Blur-in animation keyframes */
+  @keyframes blurIn {
+    0% {
+      filter: blur(20px);
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    50% {
+      filter: blur(10px);
+      opacity: 0.7;
+      transform: scale(0.9);
+    }
+    100% {
+      filter: blur(0px);
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes slideInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+      filter: blur(5px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0px);
+    }
+  }
+  
+  @keyframes blueShimmer {
+    0% { filter: hue-rotate(0deg) saturate(1.2) brightness(1); }
+    25% { filter: hue-rotate(15deg) saturate(1.4) brightness(1.1); }
+    50% { filter: hue-rotate(30deg) saturate(1.6) brightness(1.2); }
+    75% { filter: hue-rotate(15deg) saturate(1.4) brightness(1.1); }
+    100% { filter: hue-rotate(0deg) saturate(1.2) brightness(1); }
+  }
+  
+  @keyframes dance-left {
+    0%, 100% { 
+      transform: translateX(0px) rotate(0deg); 
+    }
+    25% { 
+      transform: translateX(-12px) rotate(-5deg); 
+    }
+    50% { 
+      transform: translateX(-6px) rotate(2deg); 
+    }
+    75% { 
+      transform: translateX(-18px) rotate(-3deg); 
+    }
+  }
+  
+  @keyframes dance-right {
+    0%, 100% { 
+      transform: translateX(0px) rotate(0deg); 
+    }
+    25% { 
+      transform: translateX(12px) rotate(5deg); 
+    }
+    50% { 
+      transform: translateX(6px) rotate(-2deg); 
+    }
+    75% { 
+      transform: translateX(18px) rotate(3deg); 
+    }
+  }
+  
+  /* Airplane animation classes */
+  .animate-dance-left-timed {
+    animation: dance-left 3s ease-in-out 2 forwards;
+  }
+  
+  .animate-dance-right-timed {
+    animation: dance-right 2.8s ease-in-out 2.14 forwards;
+  }
+  
+  /* Apply blur-in animation to hero elements */
+  .blue-header {
+    animation: blurIn 1.5s ease-out forwards;
+  }
+  
+  .peter-image {
+    animation: blurIn 1.8s ease-out 0.6s both;
+  }
+  
+  .subheader {
+    animation: slideInUp 1.2s ease-out 1s both;
+  }
+  
+  /* Enhanced Peter's image hover effect */
   .hover-image-container {
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .hover-image-container:hover {
-    transform: scale(1.1);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: scale(1.15);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
     z-index: 10;
+    filter: brightness(1.1);
   }
   
   .hover-image {
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .hover-image-container:hover .hover-image {
-    transform: scale(1.05);
+    transform: scale(1.08);
+  }
+  
+  /* Add a subtle glow effect to the image ring */
+  .hover-image-container::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #00ff00, #0080ff, #8000ff, #ff00ff);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+    animation: rotate 3s linear infinite;
+  }
+  
+  .hover-image-container:hover::before {
+    opacity: 0.3;
+  }
+  
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 </style>

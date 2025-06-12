@@ -1,0 +1,10 @@
+# Wrangler configuration for petersquotingtool
+# Simple configuration for SvelteKit deployment to Cloudflare Pages
+
+name = "petersquotingtool"
+compatibility_date = "2024-01-15"
+
+# Environment variables (uncomment and modify as needed)
+# [vars]
+# API_KEY = "your-api-key"
+# DATABASE_URL = "your-database-url" 

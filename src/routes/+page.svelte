@@ -863,20 +863,14 @@
 
   <!-- Main content -->
   <div class="max-w-4xl mx-auto px-4 py-4">
-    <!-- Hero Section -->
+    <!-- Hero Section (commented out)
     <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden mb-6">
-      <!-- Rainbow Header at Top -->
       <div class="relative bg-gradient-to-r from-purple-50 via-blue-50 to-indigo-50 px-6 py-4 border-b border-gray-100">
-        <!-- Main Rainbow Title -->
         <div class="text-center relative blue-header">
           <h1 class="text-5xl font-bold mb-2 blue-gradient-text">
             Peter's Quoting Tool
           </h1>
-          
-          <!-- Decorative underline with blue gradient -->
           <div class="mx-auto w-64 h-1 bg-gradient-to-r from-blue-900 via-blue-600 via-blue-400 via-sky-400 via-cyan-400 to-blue-500 rounded-full"></div>
-          
-          <!-- 3 airplanes on the left -->
           <div class="absolute top-1/2 left-0 transform -translate-y-1/2">
             <div class="flex flex-row space-x-3">
               <span class="text-blue-500 text-3xl animate-dance-left-timed">✈️</span>
@@ -884,8 +878,6 @@
               <span class="text-cyan-600 text-3xl animate-dance-left-timed" style="animation-delay: 1s;">✈️</span>
             </div>
           </div>
-          
-          <!-- 3 airplanes on the right -->
           <div class="absolute top-1/2 right-0 transform -translate-y-1/2">
             <div class="flex flex-row space-x-3">
               <span class="text-blue-600 text-2xl animate-dance-right-timed" style="animation-delay: 0.3s;">🛩️</span>
@@ -895,33 +887,24 @@
           </div>
         </div>
       </div>
-      
-      <!-- Content Area -->
       <div class="p-6 text-center">
-        <!-- Peter's Image - Now Centered in Content Area -->
         <div class="relative mb-6 peter-image">
           <div class="w-48 h-48 mx-auto rounded-full overflow-hidden ring-4 ring-white shadow-2xl bg-gray-100 flex items-center justify-center hover-image-container">
-            <!-- Peter's image -->
             <img 
               src={peterImage} 
               alt="Peter" 
               class="w-full h-full object-cover hover-image"
               on:error={handleImageError}
             />
-            <!-- Fallback placeholder -->
             <div class="w-full h-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-5xl hidden">
               P
             </div>
           </div>
         </div>
-        
-        <!-- Subheader -->
         <div class="subheader">
           <h2 class="text-lg font-medium text-gray-600 mb-4">
             As if the man himself provided you a quote.
           </h2>
-          
-          <!-- Decorative divider -->
           <div class="flex items-center justify-center space-x-4 mb-4">
             <div class="w-12 h-px bg-gradient-to-r from-transparent to-gray-300"></div>
             <span class="text-gray-400 text-sm">✦</span>
@@ -930,6 +913,7 @@
         </div>
       </div>
     </div>
+    -->
     
     <!-- Account Selection Card -->
     <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
